@@ -406,7 +406,7 @@ h2,
   padding: 88px 8vw;
   background:
     linear-gradient(180deg, rgba(13, 12, 10, 0.35), rgba(13, 12, 10, 0.72)),
-    url("images/cta.png?v=2")
+    url("images/cta.png")
       center/cover;
   text-align: center;
 }
