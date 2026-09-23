@@ -3,126 +3,274 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My First Project</title>
+    <title>FORMA — Architecture & Interiors</title>
+    <meta
+      name="description"
+      content="Архитектурная студия FORMA. Частные дома, интерьеры и авторский надзор."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="bg-glow" aria-hidden="true"></div>
-
     <header class="header">
-      <a class="logo" href="#top">My First Project</a>
-      <nav class="nav" aria-label="Основное меню">
-        <a href="#about">О проекте</a>
-        <a href="#features">Возможности</a>
+      <a class="logo" href="#top">
+        <span>FORMA</span>
+        <small>Architecture & Interiors</small>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Основное меню">
+        <a href="#studio">Студия</a>
+        <a href="#services">Услуги</a>
+        <a href="#projects">Проекты</a>
+        <a href="#process">Процесс</a>
         <a href="#contact">Контакты</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero">
-        <p class="eyebrow">Первый шаг в вайбкодинге</p>
-        <h1>My First Project</h1>
-        <p class="lead">
-          Простой современный сайт-визитка. Здесь я учусь собирать страницы,
-          менять дизайн и понимать, как из идеи получается живой сайт.
-        </p>
-        <div class="hero-actions">
-          <a class="button" href="#features">Подробнее</a>
-          <button class="button button-secondary" type="button" data-open-modal>
-            Связаться со мной
-          </button>
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"
+            alt=""
+          />
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">Москва · 2014</p>
+          <h1>Пространства, в которых хочется остаться.</h1>
+          <p class="lead">
+            Архитектура и интерьеры как одна форма: свет, материал и тишина
+            без лишнего шума.
+          </p>
+          <a class="button" href="#contact">Обсудить проект</a>
         </div>
       </section>
 
-      <section id="about" class="section">
-        <h2>О проекте</h2>
-        <p class="section-text">
-          Это учебная визитка: минимум файлов, понятная структура и аккуратный
-          внешний вид. Её можно открыть в браузере и сразу увидеть результат.
-        </p>
+      <section id="studio" class="section studio">
+        <div class="studio-label reveal">О студии</div>
+        <div class="studio-grid">
+          <h2 class="reveal">FORMA проектирует дома и интерьеры как цельный жест, а не набор красивых кадров.</h2>
+          <div class="studio-copy reveal">
+            <p>
+              Мы работаем с частными резиденциями, квартирами и небольшими
+              общественными пространствами. Нам важно, как здание стоит на
+              участке, как свет проходит через день и как человек движется
+              от входа к тихой комнате.
+            </p>
+            <p>
+              Студия ведёт проект от первого эскиза до авторского надзора.
+              Без декора ради декора — только точные пропорции, честные
+              материалы и спокойный ритм.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section id="features" class="section">
-        <h2>Что внутри</h2>
-        <div class="cards">
-          <article class="card">
-            <span class="card-number">01</span>
-            <h3>Современный вид</h3>
+      <section id="services" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Услуги</p>
+          <h2>Три дисциплины, один язык.</h2>
+        </div>
+        <div class="services">
+          <article class="service reveal">
+            <span>01</span>
+            <h3>Архитектура</h3>
             <p>
-              Светлый фон, крупные заголовки и свободное пространство — страница
-              выглядит чисто и спокойно.
+              Объём, посадка на участок, фасады и конструктив. Дом как ясная
+              композиция, а не коллекция окон.
             </p>
           </article>
-          <article class="card">
-            <span class="card-number">02</span>
-            <h3>Работает на телефоне</h3>
+          <article class="service reveal">
+            <span>02</span>
+            <h3>Дизайн интерьера</h3>
             <p>
-              Блоки сами перестраиваются: на компьютере в ряд, на маленьком
-              экране — друг под другом.
+              Планировки, свет, мебель и поверхности. Интерьер продолжает
+              архитектуру, а не спорит с ней.
             </p>
           </article>
-          <article class="card">
-            <span class="card-number">03</span>
-            <h3>Плавные эффекты</h3>
+          <article class="service reveal">
+            <span>03</span>
+            <h3>Авторский надзор</h3>
             <p>
-              Кнопка, карточки и появление текста помогают странице ощущаться
-              живой, без лишней сложности.
+              Присутствие на площадке, контроль деталей и материалов — чтобы
+              проект дошёл до реализации без потерь.
             </p>
           </article>
         </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Избранное</p>
+          <h2>Проекты, которые задают тон студии.</h2>
+        </div>
+        <div class="projects">
+          <article class="project project-wide reveal">
+            <img
+              src="images/klazma.png.png"
+              alt="Современный дом с бассейном и тёплым вечерним светом"
+            />
+            <div class="project-meta">
+              <h3>Дом на Клязьме</h3>
+              <p>Частный дом · 420 м² · 2023</p>
+            </div>
+          </article>
+          <article class="project reveal">
+            <img
+              src="images/penthaus na patriarshih.png"
+              alt="Минималистичная гостиная с мягким естественным светом"
+            />
+            <div class="project-meta">
+              <h3>Пентхаус на Патриарших</h3>
+              <p>Интерьер · 180 м² · 2024</p>
+            </div>
+          </article>
+          <article class="project reveal">
+            <img
+              src="images/galereya.png"
+              alt="Белое архитектурное здание с ритмом колонн"
+            />
+            <div class="project-meta">
+              <h3>Галерея «Север»</h3>
+              <p>Общественное пространство · 2022</p>
+            </div>
+          </article>
+          <article class="project project-wide reveal">
+            <img
+              src="images/villa.png"
+              alt="Вилла с панорамным остеклением и видом на склон"
+            />
+            <div class="project-meta">
+              <h3>Вилла в Крыму</h3>
+              <p>Архитектура и ландшафт · 380 м² · 2021</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section stats" aria-label="Цифры студии">
+        <div class="stats-grid">
+          <article class="reveal">
+            <strong>12</strong>
+            <span>лет практики</span>
+          </article>
+          <article class="reveal">
+            <strong>80+</strong>
+            <span>реализованных проектов</span>
+          </article>
+          <article class="reveal">
+            <strong>4</strong>
+            <span>страны присутствия</span>
+          </article>
+          <article class="reveal">
+            <strong>14</strong>
+            <span>человек в студии</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="process" class="section">
+        <div class="section-head reveal">
+          <p class="eyebrow">Процесс</p>
+          <h2>Как мы ведём работу.</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal">
+            <span>01</span>
+            <h3>Бриф</h3>
+            <p>Участок, сценарии жизни, бюджет и то, чего точно не нужно.</p>
+          </li>
+          <li class="reveal">
+            <span>02</span>
+            <h3>Концепция</h3>
+            <p>Объём, свет и характер пространства — до чертежей.</p>
+          </li>
+          <li class="reveal">
+            <span>03</span>
+            <h3>Проект</h3>
+            <p>Архитектура, интерьер, спецификации и согласования.</p>
+          </li>
+          <li class="reveal">
+            <span>04</span>
+            <h3>Реализация</h3>
+            <p>Авторский надзор и финальная сборка деталей на объекте.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="cta reveal">
+        <p class="eyebrow">Следующий шаг</p>
+        <h2>Начнём ваш проект.</h2>
+        <p>
+          Расскажите о доме, квартире или участке — вернёмся с ясным
+          предложением по формату работы.
+        </p>
+        <a class="button" href="#contact">Обсудить проект</a>
       </section>
 
       <section id="contact" class="section contact">
-        <h2>Дальше можно менять всё</h2>
-        <p class="section-text">
-          Текст, цвета, блоки и кнопки — это практика. Напишите в чат, что
-          хотите улучшить, и мы продолжим вместе.
-        </p>
+        <div class="contact-grid">
+          <div class="reveal">
+            <p class="eyebrow">Контакты</p>
+            <h2>Студия в Москве.</h2>
+            <address>
+              Большая Никитская, 12<br />
+              125009, Москва
+            </address>
+            <p>
+              <a href="mailto:hello@forma.studio">hello@forma.studio</a><br />
+              <a href="tel:+74950001212">+7 495 000 12 12</a>
+            </p>
+            <p class="muted">Пн–пт, 11:00–19:00</p>
+          </div>
+          <form class="contact-form reveal" id="contact-form">
+            <label>
+              Имя
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Сообщение
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button class="button" type="submit">Отправить заявку</button>
+            <p class="form-note" id="form-note" hidden>
+              Спасибо. Мы свяжемся с вами в ближайшие дни.
+            </p>
+          </form>
+        </div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>Сделано в процессе обучения вайбкодингу</p>
+      <a class="logo" href="#top">
+        <span>FORMA</span>
+        <small>Architecture & Interiors</small>
+      </a>
+      <nav aria-label="Навигация в подвале">
+        <a href="#studio">Студия</a>
+        <a href="#projects">Проекты</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <p>© 2026 FORMA. Все права защищены.</p>
     </footer>
-
-    <div class="modal-overlay" id="contact-modal" aria-hidden="true">
-      <div
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="contact-title"
-      >
-        <button class="modal-close" type="button" data-close-modal aria-label="Закрыть окно">
-          ×
-        </button>
-        <p class="modal-eyebrow">Обратная связь</p>
-        <h2 id="contact-title">Связаться со мной</h2>
-        <p class="modal-text">
-          Оставьте сообщение — позже мы подключим настоящую отправку.
-        </p>
-        <form class="contact-form" id="contact-form">
-          <label>
-            Имя
-            <input type="text" name="name" autocomplete="name" required />
-          </label>
-          <label>
-            Email
-            <input type="email" name="email" autocomplete="email" required />
-          </label>
-          <label>
-            Сообщение
-            <textarea name="message" rows="4" required></textarea>
-          </label>
-          <button class="button" type="submit">Отправить</button>
-        </form>
-      </div>
-    </div>
 
     <script src="script.js"></script>
   </body>

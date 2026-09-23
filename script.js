@@ -2,6 +2,23 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
 
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("#site-nav");
+const contactForm = document.querySelector("#contact-form");
+const formNote = document.querySelector("#form-note");
+
+function closeMenu() {
+  nav?.classList.remove("is-open");
+  menuToggle?.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("nav-open");
+}
+
+menuToggle?.addEventListener("click", () => {
+  const isOpen = nav?.classList.toggle("is-open");
+  menuToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+  document.body.classList.toggle("nav-open", Boolean(isOpen));
+});
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
     const id = link.getAttribute("href");
@@ -12,6 +29,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     }
 
     event.preventDefault();
+    closeMenu();
     target.scrollIntoView({
       behavior: prefersReducedMotion ? "auto" : "smooth",
       block: "start",
@@ -19,63 +37,15 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
-const modal = document.querySelector("#contact-modal");
-const openModalButton = document.querySelector("[data-open-modal]");
-const closeModalButtons = document.querySelectorAll("[data-close-modal]");
-const contactForm = document.querySelector("#contact-form");
-
-function openModal() {
-  if (!modal) {
-    return;
-  }
-
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("modal-open");
-  const firstField = modal.querySelector("input, textarea");
-  firstField?.focus();
-}
-
-function closeModal() {
-  if (!modal) {
-    return;
-  }
-
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("modal-open");
-  openModalButton?.focus();
-}
-
-openModalButton?.addEventListener("click", openModal);
-
-closeModalButtons.forEach((button) => {
-  button.addEventListener("click", closeModal);
-});
-
-modal?.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && modal?.classList.contains("is-open")) {
-    closeModal();
-  }
-});
-
 contactForm?.addEventListener("submit", (event) => {
   event.preventDefault();
+  contactForm.reset();
+  if (formNote) {
+    formNote.hidden = false;
+  }
 });
 
 if (!prefersReducedMotion && "IntersectionObserver" in window) {
-  const elements = document.querySelectorAll(".section, .card");
-
-  elements.forEach((element) => {
-    element.classList.add("will-reveal");
-  });
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -85,8 +55,14 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
         }
       });
     },
-    { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+    { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
   );
 
-  elements.forEach((element) => observer.observe(element));
+  document.querySelectorAll(".reveal").forEach((element) => {
+    observer.observe(element);
+  });
+} else {
+  document.querySelectorAll(".reveal").forEach((element) => {
+    element.classList.add("is-visible");
+  });
 }
